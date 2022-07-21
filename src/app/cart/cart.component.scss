@@ -1,0 +1,79 @@
+.wrapper {
+  display: flex;
+
+  & > * {
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  & > *:first-child {
+    margin-left: 0;
+  }
+
+  & > *:last-child {
+    margin-right: 0;
+  }
+
+  .cart-list {
+    max-width: 75%;
+    width: 75%;
+    max-height: calc(100vh - 76px);
+  }
+
+  .price-summary {
+    max-width: 25%;
+    width: 25%;
+  }
+}
+
+.error-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    height: 400px;
+    width: 400px;
+  }
+}
+@media (max-width: 576px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 10px;
+    & > * {
+      margin: 0;
+    }
+    .cart-list {
+      width: 100%;
+      max-width: 100%;
+      max-height: calc(100vh - 235px);
+      overflow: auto;
+      margin: 5px;
+    }
+
+    .price-summary {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    ::ng-deep .p-card-body {
+      padding: 0 10px;
+      .purchase-button {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+::ng-deep .p-dialog-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

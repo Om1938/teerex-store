@@ -1,0 +1,13 @@
+<div class="filter">
+  <div class="heading">{{ header | titlecase }}</div>
+  <div class="options">
+    <p-checkbox
+      *ngFor="let option of options"
+      name="group"
+      [value]="option.value"
+      label="{{ option.label | titlecase }}"
+      [(ngModel)]="selectedOptions"
+      (onChange)="checkChange($event)"
+    ></p-checkbox>
+  </div>
+</div>

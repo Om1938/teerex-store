@@ -1,0 +1,15 @@
+<ng-container>
+  <div class="price">
+    <span> Total Price </span><span>{{ totalPrice | currency }}</span>
+  </div>
+  <div class="purchase-button" *ngIf="totalPrice > 0">
+    <button
+      pButton
+      pRipple
+      type="button"
+      label="Proceed to Buy"
+      class="p-button-outlined p-button-rounded w-100"
+      (click)="displayThankyouHandler($event)"
+    ></button>
+  </div>
+</ng-container>

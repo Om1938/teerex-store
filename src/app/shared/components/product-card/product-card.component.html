@@ -1,0 +1,47 @@
+<div class="card">
+  <div class="head">
+    <div class="image">
+      <img
+        height="100%"
+        width="100%"
+        [src]="product.imageURL"
+        alt=""
+        srcset=""
+      />
+    </div>
+    <div class="name">
+      {{ product.name }}
+    </div>
+  </div>
+  <div class="detail">
+    <div class="price">
+      <div class="name">{{ product.price | currency: product.currency }}</div>
+    </div>
+    <div class="type">
+      {{ product.gender }}
+    </div>
+  </div>
+</div>
+<div class="add-to-cart-button">
+  <button
+    type="submit"
+    (click)="AddToCart($event)"
+    [disabled]="quantityInCart && quantityInCart >= 1"
+  >
+    <div class="submit-button-contents">
+      <div class="cart-count">
+        <teeicon-cart></teeicon-cart>
+        <span class="count" *ngIf="quantityInCart">
+          {{ quantityInCart }}
+        </span>
+      </div>
+
+      <span *ngIf="!quantityInCart; else ItemAlreayInCart">Add to Cart</span>
+      <ng-template #ItemAlreayInCart>
+        <span *ngIf="quantityInCart && quantityInCart > 0"
+          >Item Already in cart</span
+        >
+      </ng-template>
+    </div>
+  </button>
+</div>

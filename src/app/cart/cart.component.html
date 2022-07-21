@@ -1,0 +1,47 @@
+<!-- <router-outlet></router-outlet> -->
+<div class="wrapper" *ngIf="cart.length > 0; else emptyCart">
+  <ng-container>
+    <div class="cart-list">
+      <ng-container *ngFor="let cartItem of cart">
+        <teerex-cart-product-card
+          [cartItem]="cartItem"
+          (decreaseQuantity)="decreaseQuantity(cartItem)"
+          (increaseQuantity)="addQuantity(cartItem)"
+          (delete)="deleteFromCart(cartItem)"
+        ></teerex-cart-product-card>
+      </ng-container>
+    </div>
+    <div class="price-summary">
+      <p-card>
+        <app-cart-summary
+          [cartItems]="cart"
+          (displayThankyou)="displayThankyou()"
+        ></app-cart-summary>
+      </p-card>
+    </div>
+  </ng-container>
+</div>
+<ng-template #emptyCart>
+  <p-card>
+    <div class="error-wrapper">
+      <img src="/assets/empty-cart.png" />
+      <div class="text" style="margin-top: 10px">
+        Your Cart looks Empty, go to <span routerLink="''">Products</span> to
+        get something.
+      </div>
+    </div>
+  </p-card>
+</ng-template>
+
+<p-dialog
+  header="Successfull Checkout"
+  [(visible)]="display"
+  [breakpoints]="{ '960px': '75vw', '640px': '100vw' }"
+  [style]="{ width: '70vw', height: '70vw' }"
+>
+  <div class="content">
+    <img src="/assets/thankyou.png" alt="" srcset="" /><span>
+      Thank-you for Shopping with us.
+    </span>
+  </div>
+</p-dialog>

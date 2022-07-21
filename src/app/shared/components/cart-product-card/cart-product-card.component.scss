@@ -1,0 +1,156 @@
+:host:first-child {
+  .card {
+    margin-top: 0;
+  }
+}
+
+button {
+  border-radius: 6px;
+  padding: 5px;
+
+  &:first-child {
+    margin-right: 10px;
+  }
+
+  &:last-child {
+    margin-left: 10px;
+  }
+
+  &:hover:not([disabled]) {
+    background-color: #e8e4e4;
+  }
+
+  &:active:not([disabled]) {
+    background-color: #c7c4c4;
+  }
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 5px;
+
+  background-color: #fff;
+  border-radius: 6px;
+
+  & > * {
+    flex: 1 0;
+    align-self: center;
+  }
+
+  .image {
+    margin-right: 5px;
+    height: 100px;
+    width: 100px;
+    max-height: 100px;
+    max-width: 100px;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .details {
+    flex-grow: 1.5;
+    align-self: stretch;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .quantity {
+    & > * {
+      border: 1px solid #c6c4c4;
+    }
+    input {
+      width: 40px;
+      padding: 5px;
+      text-align: center;
+      border-radius: 6px;
+    }
+
+    button {
+      height: 29px;
+      width: 29px;
+    }
+
+    button {
+      border-radius: 6px;
+      padding: 5px;
+
+      &:first-child {
+        margin-right: 10px;
+      }
+
+      &:last-child {
+        margin-left: 10px;
+      }
+
+      &:hover:not([disabled]) {
+        background-color: #e8e4e4;
+      }
+
+      &:active:not([disabled]) {
+        background-color: #c7c4c4;
+      }
+    }
+  }
+
+  .action {
+    display: flex;
+    justify-content: space-evenly;
+    button {
+      border: 1px solid #c7c4c4;
+      background-color: tomato;
+      color: white;
+
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .card {
+    .quantity {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        height: 29px;
+        width: 29px;
+      }
+
+      button {
+        height: 29px;
+        width: 29px;
+      }
+
+      button {
+        border-radius: 6px;
+        padding: 5px;
+
+        &:first-child {
+          margin-bottom: 10px;
+          margin-right: 0;
+        }
+
+        &:last-child {
+          margin-top: 10px;
+          margin-left: 0;
+        }
+
+        &:hover:not([disabled]) {
+          background-color: #e8e4e4;
+        }
+
+        &:active:not([disabled]) {
+          background-color: #c7c4c4;
+        }
+      }
+    }
+  }
+}

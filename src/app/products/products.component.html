@@ -1,0 +1,60 @@
+<div class="wrapper card">
+  <div class="sidebar-wrapper">
+    <div class="sidebar">
+      <p-card>
+        <div class="filters">
+          <teerex-product-filter
+            [options]="colorFilterOptions"
+            header="Colour"
+            (change)="colorFilterChange($event)"
+          ></teerex-product-filter>
+          <teerex-product-filter
+            [options]="genderFilterOptions"
+            header="Gender"
+            (change)="genderFilterChange($event)"
+          ></teerex-product-filter>
+          <teerex-product-filter
+            [options]="typeFilterOptions"
+            header="Type"
+            (change)="typeFilterChange($event)"
+          ></teerex-product-filter>
+          <teerex-product-filter
+            [options]="priceFilterOptions"
+            header="Price"
+            (change)="priceFilterChange($event)"
+          ></teerex-product-filter>
+        </div>
+      </p-card>
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <div>
+      <p-card>
+        <span class="p-input-icon-left w-100">
+          <i class="pi pi-search"></i>
+          <input
+            type="text"
+            style="width: 100%"
+            pInputText
+            placeholder="Search"
+            [(ngModel)]="filters.txtSearch"
+            (ngModelChange)="updateFilter()"
+          />
+        </span>
+      </p-card>
+    </div>
+    <div>
+      <p-card>
+        <div class="products">
+          <div class="product" *ngFor="let product of filteredProducts">
+            <teerex-product-card
+              [product]="product"
+              [quantityInCart]="getCartQuantity(product)"
+              (addToCart)="addToCart(product)"
+            ></teerex-product-card>
+          </div>
+        </div>
+      </p-card>
+    </div>
+  </div>
+</div>

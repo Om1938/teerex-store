@@ -1,0 +1,32 @@
+.filter {
+  .heading {
+    margin-top: 1rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  .options {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+
+    & > * {
+      margin-bottom: 5px;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+:host {
+  .filter {
+    margin-bottom: 0.5rem;
+  }
+}
+
+:host:last-child {
+  .filter {
+    margin-bottom: 0;
+  }
+}

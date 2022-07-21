@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="image">
+    <img [src]="cartItem.product.imageURL" alt="" srcset="" />
+  </div>
+  <div class="details">
+    <div class="upper">
+      <div class="name">{{ cartItem.product.name }}</div>
+      <div class="gender">{{ cartItem.product.gender }}</div>
+    </div>
+    <div class="price">Rs {{ cartItem.product.price }}</div>
+  </div>
+  <div class="quantity">
+    <button (click)="decreaseQuantityHandler($event)">-</button>
+    <input type="text" [value]="cartItem.quantity" />
+    <button (click)="increaseQuantityHandler($event)">+</button>
+  </div>
+  <div class="action">
+    <button (click)="confirm($event)">
+      <teeicon-delete></teeicon-delete> Delete
+    </button>
+    <p-confirmPopup></p-confirmPopup>
+  </div>
+</div>
