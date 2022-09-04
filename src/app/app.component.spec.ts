@@ -1,15 +1,21 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { CardModule } from 'primeng/card';
+import { DialogModule } from 'primeng/dialog';
 import { AppComponent } from './app.component';
+import { PrimengModule } from './app.primeng.module';
+import { AppService } from './app.service';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
+      imports: [RouterTestingModule, PrimengModule, DialogModule, CardModule],
+      declarations: [AppComponent],
+      providers: [
+        {
+          provide: AppService,
+          useValue: {},
+        },
       ],
     }).compileComponents();
   });
@@ -24,12 +30,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('teerex-store');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('teerex-store app is running!');
   });
 });

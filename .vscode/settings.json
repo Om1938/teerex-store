@@ -1,3 +1,7 @@
 {
-    "editor.fontFamily": "'Cascadia Code', Consolas, 'Courier New', monospace"
+  "editor.fontFamily": "'Cascadia Code', Consolas, 'Courier New', monospace",
+  "sonarlint.connectedMode.project": {
+    "connectionId": "om1938",
+    "projectKey": "Om1938_teerex-store"
+  }
 }

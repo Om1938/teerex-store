@@ -1,21 +1,18 @@
-<p-menubar>
-  <ng-template pTemplate="start">
-    <img
-      src="https://www.primefaces.org/primeng/assets/showcase/images/primeng.svg"
-      height="40"
-      class="mr-2"
-    />
-  </ng-template>
-  <ng-template pTemplate="end">
-    <!-- <a routerLink="/products">Products</a>
-    <a routerLink="/cart"> -->
-    <!-- <teeicon-cart></teeicon-cart>
-    </a> -->
-    <p-megaMenu [model]="items"></p-megaMenu>
-  </ng-template>
-</p-menubar>
-<div class="container">
+<div class="wrapper">
+  <p-menubar styleClass="container no-border">
+    <ng-template pTemplate="start">
+      <img
+        src="https://www.primefaces.org/primeng/assets/showcase/images/primeng.svg"
+        alt="logo"
+        height="40"
+        class="mr-2"
+      />
+    </ng-template>
+    <ng-template pTemplate="end">
+      <p-megaMenu [model]="items"></p-megaMenu>
+    </ng-template>
+  </p-menubar>
+</div>
+<div class="container mt-5">
   <router-outlet></router-outlet>
 </div>
-
-<p-toast></p-toast>

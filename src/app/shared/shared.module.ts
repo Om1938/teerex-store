@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { CartComponent } from './icons/cart/cart.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { PrimengModule } from './shared.primeng.module';
@@ -11,7 +10,6 @@ import { CartProductCardComponent } from './components/cart-product-card/cart-pr
 import { DeleteComponent } from './icons/delete/delete.component';
 @NgModule({
   declarations: [
-    NavbarComponent,
     CartComponent,
     FilterComponent,
     ProductCardCComponent,
@@ -20,7 +18,6 @@ import { DeleteComponent } from './icons/delete/delete.component';
   ],
   imports: [CommonModule, PrimengModule, FormsModule],
   exports: [
-    NavbarComponent,
     CartComponent,
     FilterComponent,
     ProductCardCComponent,

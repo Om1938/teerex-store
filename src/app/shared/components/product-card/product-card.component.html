@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" *ngIf="product">
   <div class="head">
     <div class="image">
       <img
@@ -25,6 +25,7 @@
 <div class="add-to-cart-button">
   <button
     type="submit"
+    class="add-to-cart-button"
     (click)="AddToCart($event)"
     [disabled]="quantityInCart && quantityInCart >= 1"
   >

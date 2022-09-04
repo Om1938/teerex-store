@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'teeicon-delete',
@@ -25,10 +25,6 @@ import { Component, Input, OnInit } from '@angular/core';
   `,
   styles: [],
 })
-export class DeleteComponent implements OnInit {
+export class DeleteComponent {
   @Input() currentColor: string = 'currentColor';
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

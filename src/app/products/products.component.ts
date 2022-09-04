@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FilterItem } from '@shared/model/filter-item.interface';
-import { MenuItem } from 'primeng/api';
-import { AppService } from '../app.service';
 import { Product } from '@shared/model/product.interface';
 import { ToasterService } from '../toastr.service';
 import { ProductService } from './product.service';
@@ -142,10 +140,6 @@ export class ProductsComponent implements OnInit {
           product.type.toLocaleLowerCase().includes(searchKey) ||
           product.name.toLocaleLowerCase().includes(searchKey))
     );
-  }
-
-  getProductCountInCart(product: Product) {
-    return this._service.getProductCountInCart(product);
   }
 }
 

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FilterItem } from '@shared/model/filter-item.interface';
 
 @Component({
@@ -6,7 +6,7 @@ import { FilterItem } from '@shared/model/filter-item.interface';
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss'],
 })
-export class FilterComponent implements OnInit {
+export class FilterComponent {
   @Input() header = '';
   @Input() options: FilterItem[] = [];
 
@@ -14,9 +14,6 @@ export class FilterComponent implements OnInit {
 
   selectedOptions: string[] = [];
 
-  constructor() {}
-
-  ngOnInit(): void {}
   checkChange(e: any) {
     this.change.emit(e);
   }

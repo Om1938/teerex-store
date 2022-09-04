@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
 import { MegaMenuItem } from 'primeng/api';
-import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +9,7 @@ import { AppService } from './app.service';
 export class AppComponent {
   title = 'teerex-store';
   items: MegaMenuItem[];
-  constructor(private _service: AppService, private _toast: ToastrService) {
+  constructor() {
     this.items = [
       {
         label: 'Products',

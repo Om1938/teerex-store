@@ -1,9 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CartItem } from '@shared/model/cartItem.model';
-import { Product } from '@shared/model/product.interface';
 import { ToastrService } from 'ngx-toastr';
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CartItem } from '@shared/model/cartItem.model';
 import { ConfirmationService } from 'primeng/api';
 
@@ -7,7 +7,7 @@ import { ConfirmationService } from 'primeng/api';
   templateUrl: './cart-product-card.component.html',
   styleUrls: ['./cart-product-card.component.scss'],
 })
-export class CartProductCardComponent implements OnInit {
+export class CartProductCardComponent {
   @Input() cartItem!: CartItem;
 
   @Output() decreaseQuantity = new EventEmitter();
@@ -35,12 +35,11 @@ export class CartProductCardComponent implements OnInit {
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
         //confirm action
-        this.deleteFromCart(event as MouseEvent);
+        this.deleteFromCart(event);
       },
       reject: () => {
         //reject action
       },
     });
   }
-  ngOnInit(): void {}
 }

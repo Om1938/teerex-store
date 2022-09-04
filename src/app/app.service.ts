@@ -2,27 +2,28 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CartItem } from '@shared/model/cartItem.model';
 import { Product } from '@shared/model/product.interface';
-import { ToastrService } from 'ngx-toastr';
-import { BehaviorSubject, observable, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AppService {
+  public url =
+    'https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/shopping-cart/catalogue.json';
   private Products = new BehaviorSubject<Product[]>([]);
   Products$ = this.Products.asObservable();
 
   private Cart = new BehaviorSubject<CartItem[]>([]);
   Cart$ = this.Cart.asObservable();
 
-  constructor(private http: HttpClient, private toastr: ToastrService) {
-    this.http
-      .get(
-        'https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/shopping-cart/catalogue.json'
-      )
-      .subscribe((res: any) => {
-        this.Products.next(res);
-      });
+  constructor(private http: HttpClient) {
+    this.getProducts();
+  }
+
+  getProducts() {
+    this.http.get(this.url).subscribe((res: any) => {
+      this.Products.next(res);
+    });
   }
 
   addProductToCart(product: Product, quantity: number = 1) {
@@ -34,7 +35,6 @@ export class AppService {
       });
 
       if (index == -1) {
-        // TODO: Create a deep-copy of the product, just destructuring here because there is only 1 level
         currentCart = [
           ...currentCart,
           new CartItem({ product: { ...product }, quantity }),
@@ -53,7 +53,7 @@ export class AppService {
 
       let index = cart.findIndex((c) => c.product.id == cartItem.product.id);
       if (index == -1) {
-        observable.error('Product not found in cart');
+        observable.error(new Error('Product not found in cart'));
       } else {
         if (!cart[index].addQuantity(quantity)) {
           observable.error(

@@ -6,7 +6,6 @@ import { ProductsComponent } from './products.component';
 import { PrimengModule } from './products.primeng.module';
 import { SharedModule } from '@shared/shared.module';
 import { ToastrModule } from 'ngx-toastr';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({

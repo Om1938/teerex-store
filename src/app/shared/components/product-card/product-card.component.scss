@@ -3,6 +3,8 @@
   background: #ffffff;
   color: #495057;
 
+  transition: all 0.2s ease-in-out;
+
   border-radius: 6px;
   border: 1px solid #c7c4c4;
   .head {
@@ -52,18 +54,13 @@
     border-radius: 0 0 6px 6px;
 
     border: 1px solid #c7c4c4;
-    // border-top: none;
     flex-grow: 1;
 
     .submit-button-contents {
       display: flex;
       align-items: center;
       padding: 5px;
-    }
-  }
 
-  & > button {
-    .submit-button-contents {
       :first-child {
         border-radius: 0 0 0 6px;
         border-right: none;
@@ -76,15 +73,10 @@
       }
     }
   }
-}
-
-.add-to-cart-button {
   & > button:hover:not([disabled]) {
     background-color: #e8e4e4;
   }
-}
 
-.add-to-cart-button {
   & > button:active:not([disabled]) {
     background-color: #c7c4c4;
   }

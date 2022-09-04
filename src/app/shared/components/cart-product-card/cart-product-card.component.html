@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" *ngIf="cartItem && cartItem.product">
   <div class="image">
     <img [src]="cartItem.product.imageURL" alt="" srcset="" />
   </div>
@@ -11,7 +11,7 @@
   </div>
   <div class="quantity">
     <button (click)="decreaseQuantityHandler($event)">-</button>
-    <input type="text" [value]="cartItem.quantity" />
+    <input placeholder="0" type="text" [value]="cartItem.quantity" />
     <button (click)="increaseQuantityHandler($event)">+</button>
   </div>
   <div class="action">

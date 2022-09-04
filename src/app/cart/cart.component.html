@@ -1,4 +1,3 @@
-<!-- <router-outlet></router-outlet> -->
 <div class="wrapper" *ngIf="cart.length > 0; else emptyCart">
   <ng-container>
     <div class="cart-list">
@@ -24,7 +23,7 @@
 <ng-template #emptyCart>
   <p-card>
     <div class="error-wrapper">
-      <img src="/assets/empty-cart.png" />
+      <img alt="Empty" src="/assets/empty-cart.png" />
       <div class="text" style="margin-top: 10px">
         Your Cart looks Empty, go to <span routerLink="''">Products</span> to
         get something.
