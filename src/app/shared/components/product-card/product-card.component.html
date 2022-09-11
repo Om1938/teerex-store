@@ -29,7 +29,7 @@
     (click)="AddToCart($event)"
     [disabled]="quantityInCart && quantityInCart >= 1"
   >
-    <div class="submit-button-contents">
+    <div class="submit-button-contents w-100">
       <div class="cart-count">
         <teeicon-cart></teeicon-cart>
         <span class="count" *ngIf="quantityInCart">
